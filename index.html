@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Neighborhood Map</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <section class="container-fluid">
+    <nav>
+      <h1>Lost in Kyrgyzstan</h1>
+      <p>In October 1991, Akayev ran unopposed and was elected president of the new independent Republic by direct ballot, receiving 95 percent of the votes cast. Together with the representatives of seven other Republics that same month, he signed the Treaty of the New Economic Community. Finally, on 21 December 1991, Kyrgyzstan joined with the other four Central Asian Republics to formally enter the new Commonwealth of Independent States. Kyrgyzstan gained full independence a few days later on 25 December 1991. The following day, on 26 December 1991, the Soviet Union ceased to exist. In 1992, Kyrgyzstan joined the United Nations and the Organization for Security and Co-operation in Europe (OSCE). On 5 May 1993, the official name changed from the Republic of Kyrgyzstan to the Kyrgyz Republic.
+      In 2005, a popular uprising known as the "Tulip Revolution", took place after the parliamentary elections in March 2005, forced President Askar Akayev's resignation on 4 April 2005. Opposition leaders formed a coalition, and a new government was formed under President Kurmanbek Bakiyev and Prime Minister Feliks Kulov. The nation's capital was looted during the protests.
+       </p>
+       <img src="img/jailoo.jpg" alt="summer posture">
+       <img src="img/kel_suu.jpg" alt="lake">
+       <img src="img/jeti_oguz.jpg" class="img-responsive" alt="seven bulls">
+       <div class="gallery">
+  <a target="_blank" href="img/kel_suu.jpg">
+    <img src="img/kel_suu.jpg" alt="5Terre" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+  </nav>
+    <div class="container">
+      <img data-bind="click:showList" class="menu-icon" src="icons/menu.svg" alt="menu icon">
+      <div class="menu-list">
+        <div class="menu-heading">
+          <img data-bind="click:closeList" class="close-icon" src="icons/close.svg" alt="close icon">
+          <h2>Places you should visit</h2>
+        </div>
+        <div class="search-box">
+          <input type="text" data-bind="value:query, valueUpdate: 'keyup'" placeholder="Find Location">
+        </div>
+        <ul data-bind="foreach: filteredRecords">
+          <li id="list-item" data-bind="click:$parent.placeInfo">
+            <h3 data-bind="text: $data.title"></h3>
+          </li>
+        </ul>
+      </div>
+      <div id="map" class="map-canvas"></div>
+    </div>
+  
+  </section>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/knockout-3.4.2.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTp3QmPNZ6EnfyXRIfEQmEoDYYGP4AOk0&v=3&callback=initMap" onerror="myerrorhandler()"></script>
+</body>
+
+</html>
